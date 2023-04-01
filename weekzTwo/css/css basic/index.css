@@ -1,0 +1,92 @@
+/* bais selector */
+
+
+/* 
+p {
+    color: red;
+}
+
+#fifth {
+    color: purple;
+}
+
+.pg {
+    color: green;
+}
+*/
+
+section {
+    background: #000;
+}
+
+
+/* Descendant (space) */
+
+section p {
+    color: green;
+}
+
+
+/* Child (>) */
+
+section>p {
+    color: purple;
+}
+
+
+/* Adjacent (+) */
+
+section+div {
+    color: maroon;
+}
+
+
+/* sibling (~) */
+
+section~div {
+    color: #803;
+}
+
+
+/* Attribute selector */
+
+
+/* [Attribute-Name] */
+
+[href] {
+    text-decoration: none;
+}
+
+
+/* [Attribute-Name=”value”] */
+
+[href="contact.html"] {
+    background-color: brown;
+    color: white;
+}
+
+
+/* element[Attribute-Name] */
+
+a[href] {
+    text-decoration: none;
+    color: pink;
+}
+
+
+/* Pseudo-elements selector */
+
+p::first-letter {
+    font-size: 3rem;
+}
+
+
+/* Pseudo -class selector */
+
+a:hover {
+    font-size: 7rem;
+}
+
+p:nth-child(odd) {
+    color: rebeccapurple;
+}

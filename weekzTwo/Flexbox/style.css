@@ -1,0 +1,53 @@
+/* body */
+
+body {
+    margin: 0%;
+}
+
+
+/* parent div */
+
+.parent {
+    background: blue;
+    padding: 1rem;
+    gap: 10px;
+    height: 60vh;
+    /* flex */
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-around;*/
+    flex-direction: row;
+    align-items: stretch;
+}
+
+
+/* div item */
+
+.parent>div {
+    background: rgb(18, 163, 79);
+    width: 80px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parent>div:nth-child(odd) {
+    background: rebeccapurple;
+}
+
+.item-4 {
+    align-self: flex-start;
+}
+
+.item-6 {
+    align-self: flex-end;
+}
+
+.item-2 {
+    order: -1;
+}
+
+.item-3 {
+    flex-grow: 1;
+}
