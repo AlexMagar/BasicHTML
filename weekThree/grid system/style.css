@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+}
+
+.wrapper {
+    background-color: purple;
+    color: white;
+    padding: 10px;
+    min-height: 60vh;
+    /* grid system */
+    display: grid;
+    gap: 1rem;
+    /* grid-template-columns: 20px repeat(2, 1fr); */
+    /* grid-template-columns: auto 20px 1fr 30%; */
+    /* grid-template-columns: repeat(3, 1fr); */
+    /* grid-template-rows: repeat(3, 1fr); */
+    grid-template-areas: "i1 i1" "i2 i3" "i4 i4" "i5 i6" "i7 i7" "i8 i9";
+}
+
+.wrapper div {
+    background: red;
+    color: white;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-1 {
+    /* grid-row-start: 2;
+    grid-row-end: 4;
+    grid-row: 2/4;
+    grid-column-start: 2;
+    grid-column-end: 4; 
+    grid-column: 2/4 */
+    grid-area: i1;
+}
+
+.item-2 {
+    grid-area: i2;
+}
+
+.item-3 {
+    grid-area: i3;
+}
+
+.item-4 {
+    grid-area: i4;
+}
+
+.item-5 {
+    grid-area: i5;
+}
+
+.item-6 {
+    grid-area: i6;
+}
+
+.item-7 {
+    grid-area: i7;
+}
+
+.item-8 {
+    grid-area: i8;
+}
+
+.item-9 {
+    grid-area: i9;
+}
+
+.circle {
+    border: 5px double red;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+}
