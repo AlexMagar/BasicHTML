@@ -19,6 +19,7 @@ body {
 .wrapper > * {
   display: grid;
   justify-content: center;
+  align-items: center;
 }
 
 .wrapper > h1 {
@@ -70,4 +71,36 @@ header {
 footer {
   background: #000;
   grid-area: footer;
+}
+
+/* media query */
+
+/* ipads 950px and mobile 576px  */
+
+/* @media (max-width: 1024px) */
+
+@media (576px < width <=950px) {
+  .wrapper {
+    display: grid;
+    color: white;
+    gap: 5px;
+    /* grid layout */
+    /* divide into 3 column */
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "h1 h1 " "header header " "banner banner " "banner banner " "offer1 offer2" "side-menu side-menu" "main main" "recent tags" "footer footer";
+  }
+}
+
+/* for mobile responsive size below 576px */
+
+@media (max-width: 576px) {
+  .wrapper {
+    display: grid;
+    color: white;
+    gap: 5px;
+    /* grid layout */
+    /* divide into 3 column */
+    grid-template-columns: 1fr;
+    grid-template-areas: "h1" "header  " "banner  " "banner  " "offer1 " "offer2" "side-menu" "recent" "tags" "main " "footer ";
+  }
 }
