@@ -4,51 +4,70 @@
 
 body {
   margin: 0;
-  text-align: center;
 }
 
 .wrapper {
   display: grid;
   color: white;
-  gap: 1rem;
+  gap: 0.5rem;
+  /* grid layout */
+  /* divide into 3 column */
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: "h1 h1 h1" "header header header" "banner banner offer1" "banner banner offer2" "side-menu main main" "recent main main" "tags main main" "footer footer footer";
+}
+
+.wrapper > * {
+  display: grid;
+  justify-content: center;
 }
 
 .wrapper > h1 {
   background-color: purple;
+  grid-area: h1;
 }
 
 header {
   background: red;
+  grid-area: header;
 }
 
 .banner {
-  background: blue;
+  background: linear-gradient(200deg, green, orange, blue);
+  grid-area: banner;
+  min-height: 20vh;
 }
 
 .offer1 {
   background: yellowgreen;
+  grid-area: offer1;
 }
 
 .offer2 {
   background: brown;
+  grid-area: offer2;
 }
 
 .side-menu {
   background: palevioletred;
+  grid-area: side-menu;
 }
 
 .recent {
   background: slateblue;
+  grid-area: recent;
 }
 
 .tags {
   background: skyblue;
+  grid-area: tags;
 }
 
-.product1 {
+.main {
   background: goldenrod;
+  grid-area: main;
 }
 
 footer {
   background: #000;
+  grid-area: footer;
 }
