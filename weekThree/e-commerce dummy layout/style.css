@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  text-align: center;
+}
+
+.wrapper {
+  display: grid;
+  color: white;
+  gap: 1rem;
+}
+
+.wrapper > h1 {
+  background-color: purple;
+}
+
+header {
+  background: red;
+}
+
+.banner {
+  background: blue;
+}
+
+.offer1 {
+  background: yellowgreen;
+}
+
+.offer2 {
+  background: brown;
+}
+
+.side-menu {
+  background: palevioletred;
+}
+
+.recent {
+  background: slateblue;
+}
+
+.tags {
+  background: skyblue;
+}
+
+.product1 {
+  background: goldenrod;
+}
+
+footer {
+  background: #000;
+}
