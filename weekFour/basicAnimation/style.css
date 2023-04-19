@@ -1,0 +1,32 @@
+.container {
+  background: blue;
+  width: 80%;
+  height: 80vh;
+  margin: auto;
+  /* flex content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.parent {
+  background: burlywood;
+  width: 50%;
+  height: 50vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  color: white;
+}
+
+.ball {
+  background: red;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
