@@ -54,8 +54,10 @@ nav {
   z-index: 100;
 }
 
-nav > .container {
-  position: flex;
+nav > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 1.3rem;
 }
 
