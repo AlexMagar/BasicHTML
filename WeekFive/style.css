@@ -1,0 +1,102 @@
+/* default styles */
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-red: #a92828;
+  --color-dark: #1e1e1e;
+  --body-bg: #fff;
+  --text-color: var(var(--color-dark));
+  --border-color: var(var(var(--color-dark)));
+  /* for dark mode */
+  --dark-bg: var(var(--color-dark));
+  --dark-text-color: #060606;
+  --dark-border-color: #000000;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+/* wrapper */
+
+.wrapper {
+  background: var(--body-bg);
+  min-height: 100vh;
+  color: var(--text-color);
+}
+
+ul,
+li,
+a {
+  list-style: none;
+  text-decoration: none;
+  color: inherit;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+/* checkbox section */
+
+#darkMode {
+  position: fixed;
+  top: 6rem;
+  left: 2rem;
+  display: none;
+}
+
+.dark-mode-toogle {
+  position: fixed;
+  top: 6rem;
+  left: 2rem;
+}
+
+.dark-mode-toogle:hover {
+  transform: scale(1.5);
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+/* dark mode activation */
+
+#darkMode:checked + .wrapper {
+  background: var(--dark-bg);
+  min-height: 100vh;
+  color: var(--dark-text-color);
+}
+
+/* header section */
+
+header {
+  box-shadow: 0 0 10px 5px gray;
+  position: sticky;
+  top: 0;
+}
+
+.header {
+  justify-content: space-between;
+  align-items: center;
+}
+
+#check,
+.menu-icon {
+  display: none;
+}
+
+.nav {
+  list-style: none;
+}
