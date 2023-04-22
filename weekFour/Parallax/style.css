@@ -2,6 +2,16 @@ body {
   margin: 0;
 }
 
+/* global selction */
+
+* {
+  box-sizing: border-box;
+}
+
+ul li {
+  list-style: none;
+}
+
 /* wrapper class */
 
 .container {
@@ -26,14 +36,98 @@ video {
   position: absolute;
   top: 30vh;
   left: 10vw;
-  border: 1px solid;
   border-radius: 20px;
-  background: rgba(0, 0, 0, 0.544);
-  color: white;
-  padding: 10px;
-  height: 20vh;
-  width: 400px;
+  background: rgba(255, 255, 255, 0.206);
+  /* color: white; */
+  width: 450px;
+  padding: 1rem;
   backdrop-filter: blur(10px);
+}
+
+/* nav section */
+
+nav {
+  background: black;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav > .container {
+  position: flex;
+  font-size: 1.3rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+nav ul li {
+  transition: all 0.5s;
+}
+
+nav ul li:hover {
+  color: red;
+  cursor: pointer;
+  transform: scale(1.4);
+}
+
+/* section */
+
+/* ==== select the class with initial letter s...  */
+
+[class^="s"] {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.s1 {
+  background: url(./assets/a.jpg) center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.s2 {
+  background: url(./assets/b.jpg) center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.s3 {
+  background: url(./assets/c.jpg) center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.s4 {
+  background: url(./assets/d.jpg) center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.title {
+  background: rgba(0, 0, 0, 0.646);
+  color: white;
+  font-size: 2rem;
+  padding: 1.4rem 5rem;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  backdrop-filter: blur(5px);
+}
+
+/* =====footer */
+
+footer {
+  background: #000;
+  color: white;
+  padding: 3rem;
+  text-align: center;
 }
 
 /* down arrow  */
