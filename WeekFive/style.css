@@ -15,6 +15,11 @@ body {
   gap: 1rem;
 }
 
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
 .container {
   width: 80%;
   margin: auto;
@@ -25,6 +30,13 @@ a {
   color: inherit;
 }
 
+.title {
+  font-size: 2rem;
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
 /* <!-- checkbox section  --> */
 
 :root {
@@ -32,7 +44,7 @@ a {
   --color-dark: #2a2a2a;
   --body-bg: #fff;
   --text-color: var(--color-dark);
-  --border-color: var(var(--color-dark));
+  --border-color: var(--color-dark);
   /* for dark mode */
   --dark-bg: var(--color-dark);
   --dark-text-color: #fff;
@@ -68,8 +80,10 @@ a {
 
 #darkMode:checked + .wrapper {
   background: var(--dark-bg);
+  --text-color: var(var(--dark-text-color));
   min-height: 100vh;
-  color: var(--dark-text-color);
+  color: --dark-text-color;
+  --border-color: var(--dark-border-color);
 }
 
 /* <!-- Header section  --> */
@@ -78,6 +92,8 @@ header {
   box-shadow: 0 0 10px 5px grey;
   position: sticky;
   top: 0;
+  /* z-index: 1; */
+  background: var(--body-bg);
 }
 
 .header {
@@ -185,11 +201,100 @@ header {
   height: 110%;
 }
 
-/* <!-- Bannder section  --> */
+/* <!-- Banner section  --> */
+
+.banner {
+  border: 2px solid var(--border-color);
+  margin-top: 7rem;
+  border-radius: 100px;
+  padding: 2rem;
+  min-height: 7rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.banner .info-content {
+  justify-content: center;
+  align-items: center;
+}
+
+.banner .info-content .icon-container {
+  background: var(--color-orange);
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner .info-content .icon-container i {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.banner .info-content span {
+  font-weight: bolder;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+}
+
+.banner .info-content p {
+  color: var(--color-orange);
+}
+
+.banner .info-divider {
+  width: 2px;
+  height: 50px;
+  background: gray;
+}
 
 /* <!-- Skills section  --> */
 
+.skills {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  padding-top: 7rem;
+  font-size: 2rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.skills > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills i {
+  font-size: 6rem;
+}
+
 /* <!-- Projects section  --> */
+
+.projects {
+  margin-top: 3rem;
+  padding-top: 7rem;
+}
+
+.projects .project-container {
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.projects .project-container .project-card {
+  flex-direction: column;
+  box-shadow: 0 4px 12px 4px rgba(0, 0, 0, 0.247);
+}
+
+.projects .project-container .project-card img {
+  width: 100%;
+}
+
+.project-icon {
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
 
 /* <!-- About me section  --> */
 
