@@ -1,47 +1,17 @@
-/* default styles */
+/* Default styles */
 
 * {
   box-sizing: border-box;
 }
 
-:root {
-  --color-red: #a92828;
-  --color-dark: #1e1e1e;
-  --body-bg: #fff;
-  --text-color: var(var(--color-dark));
-  --border-color: var(var(var(--color-dark)));
-  /* for dark mode */
-  --dark-bg: var(var(--color-dark));
-  --dark-text-color: #060606;
-  --dark-border-color: #000000;
-}
-
 body {
   font-family: "Roboto", sans-serif;
-  padding: 0;
   margin: 0;
-}
-
-/* wrapper */
-
-.wrapper {
-  background: var(--body-bg);
-  min-height: 100vh;
-  color: var(--text-color);
-}
-
-ul,
-li,
-a {
-  list-style: none;
-  text-decoration: none;
-  color: inherit;
+  padding: 0;
 }
 
 .flex {
   display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 1rem;
 }
 
@@ -50,7 +20,30 @@ a {
   margin: auto;
 }
 
-/* checkbox section */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* <!-- checkbox section  --> */
+
+:root {
+  --color-orange: #ff5c00;
+  --color-dark: #2a2a2a;
+  --body-bg: #fff;
+  --text-color: var(--color-dark);
+  --border-color: var(var(--color-dark));
+  /* for dark mode */
+  --dark-bg: var(--color-dark);
+  --dark-text-color: #fff;
+  --dark-border-color: #fff;
+}
+
+.wrapper {
+  background: var(--body-bg);
+  min-height: 100vh;
+  color: var(--text-color);
+}
 
 #darkMode {
   position: fixed;
@@ -59,19 +52,19 @@ a {
   display: none;
 }
 
-.dark-mode-toogle {
+.dark-mode-toggle {
   position: fixed;
-  top: 6rem;
-  left: 2rem;
+  top: 8rem;
+  left: 3rem;
 }
 
-.dark-mode-toogle:hover {
+.dark-mode-toggle:hover {
   transform: scale(1.5);
   cursor: pointer;
   transition: all 0.5s;
 }
 
-/* dark mode activation */
+/* dark more activation */
 
 #darkMode:checked + .wrapper {
   background: var(--dark-bg);
@@ -79,10 +72,10 @@ a {
   color: var(--dark-text-color);
 }
 
-/* header section */
+/* <!-- Header section  --> */
 
 header {
-  box-shadow: 0 0 10px 5px gray;
+  box-shadow: 0 0 10px 5px grey;
   position: sticky;
   top: 0;
 }
@@ -90,6 +83,32 @@ header {
 .header {
   justify-content: space-between;
   align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  position: relative;
+}
+
+.logo > div:nth-child(1) h1 {
+  font-size: 1.8rem;
+}
+
+.line {
+  font-size: 1rem;
+}
+
+.line::before {
+  content: "";
+  width: 4px;
+  height: 40%;
+  left: 50%;
+  /* top: 1rem; */
+  background: var(--color-orange);
+  position: absolute;
 }
 
 #check,
@@ -97,6 +116,83 @@ header {
   display: none;
 }
 
-.nav {
+.navigation {
   list-style: none;
 }
+
+.navigation li a:hover {
+  color: var(--color-orange);
+  transition: all 0.5s;
+}
+
+/* <!-- hero section  --> */
+
+.hero-section {
+  padding-top: 10rem;
+  color: var(--body-bg);
+}
+
+.hero {
+  background: var(--color-orange);
+  padding: 0 2rem;
+  display: grid;
+  grid-template-areas: "left right";
+}
+
+/* =====left section of hero content */
+
+.left {
+  grid-area: left;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 5vw;
+}
+
+.left .name {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.left .tag {
+  font-size: 2.2rem;
+  font-weight: bold;
+  letter-spacing: 5px;
+}
+
+.left button {
+  padding: 0.8rem 2rem;
+  border: none;
+  background: var(--color-dark);
+  border-radius: 2rem;
+  color: var(--body-bg);
+  font-size: 1.1rem;
+}
+
+/* .left button i {
+  color: var(--color-orange);
+} */
+
+/* ====== right section of hero section */
+
+.right {
+  grid-area: right;
+  justify-content: center;
+  align-items: center;
+  margin-top: -2rem;
+}
+
+.right img {
+  height: 110%;
+}
+
+/* <!-- Bannder section  --> */
+
+/* <!-- Skills section  --> */
+
+/* <!-- Projects section  --> */
+
+/* <!-- About me section  --> */
+
+/* <!-- Contact me section  --> */
+
+/* <!-- footer section --> */
