@@ -54,18 +54,18 @@
                 <i class="fa-solid fa-bars"></i>
               </label>
               <ul class="navigation flex">
-                <li><a href="">Home</a></li>
-                <li><a href="">Skills </a></li>
-                <li><a href="">Projects </a></li>
-                <li><a href="">About </a></li>
-                <li><a href="">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Skills </a></li>
+                <li><a href="#projects">Projects </a></li>
+                <li><a href="#about-me">About </a></li>
+                <li><a href="#contact">Contact</a></li>
               </ul>
             </div>
           </div>
         </header>
 
         <!-- hero section  -->
-        <section class="hero-section container">
+        <section class="hero-section container" id="home">
           <div class="hero">
             <div class="left flex">
               <div>
@@ -127,7 +127,7 @@
           </div>
         </section>
         <!-- Skills section  -->
-        <section class="skills container flex">
+        <section class="skills container flex" id="skills">
           <div>
             <i class="fa-brands fa-html5"></i>
             <span>HTML</span>
@@ -146,7 +146,7 @@
           </div>
         </section>
         <!-- Projects section  -->
-        <section class="projects container">
+        <section class="projects container" id="projects">
           <h2 class="title">My Recent Work</h2>
           <div class="project-container grid">
             <div class="project-card flex">
@@ -231,10 +231,91 @@
         </section>
 
         <!-- About me section  -->
+        <section class="about" id="about-me">
+          <div class="container">
+            <h1>About Me</h1>
+            <div class="about-content flex">
+              <div class="about-left">
+                <img src="./assets/portfolio-removebg-preview.png" alt="#" />
+              </div>
+              <div class="about-right">
+                <span class="title">Laxman Magar</span>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
+                  recusandae ad perferendis quae, vero aliquid aut id odit? Odio
+                  natus delectus quas ratione enim. Culpa quae praesentium eum
+                  nobis iure.
+                </p>
+
+                <address>Sydney Australia</address>
+
+                <div class="about-intrest">
+                  <div class="interest">Interest</div>
+                  <div class="flex">
+                    <span>coding</span>
+                    <span>Football</span>
+                    <span>Movies</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <!-- Contact me section  -->
+        <section class="touch" id="contact">
+          <h2 class="title">Get In Touch</h2>
+          <div class="social-links container">
+            <div class="social-media flex">
+              <a href="#"> <i class="fa-brands fa-linkedin"></i></a>
+              <a href="#"> <i class="fa-brands fa-linkedin"></i></a>
+              <a href="#"> <i class="fa-brands fa-linkedin"></i></a>
+              <a href="#"> <i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <h2 class="title">OR</h2>
+            <a href="mailto:laxman@gmail.com">
+              <div class="email-section flex">
+                <div class="email flex">
+                  <span>example@gmail.com</span>
+                  <div class="snd-email">
+                    <i class="fa-solid fa-paper-plane"></i>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </section>
 
         <!-- footer section -->
+        <footer>
+          <div class="container">
+            <div class="top flex">
+              <div class="links">
+                <h2 class="title">LINKS</h2>
+                <ul>
+                  <li>Home</li>
+                  <li>Skills</li>
+                  <li>Projects</li>
+                  <li>About Me</li>
+                </ul>
+              </div>
+              <div class="socials">
+                <h2 class="socials">SOCIALS</h2>
+                <ul>
+                  <li>LinkedIn</li>
+                  <li>Github</li>
+                  <li>Youtube</li>
+                </ul>
+              </div>
+            </div>
+            <div class="bottom">© All right reserved</div>
+          </div>
+        </footer>
+
+        <!-- ===up-arrow -->
+        <div class="go-up flex">
+          <a href="#home"> <i class="fa-sharp fa-solid fa-angle-up"></i></a>
+        </div>
       </div>
     </div>
   </body>
