@@ -1,5 +1,9 @@
 /* Default styles */
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -8,6 +12,10 @@ body {
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
+}
+
+ul li {
+  list-style: none;
 }
 
 .flex {
@@ -251,7 +259,7 @@ header {
 /* <!-- Skills section  --> */
 
 .skills {
-  margin-top: 4rem;
+  margin-top: 7rem;
   margin-bottom: 4rem;
   padding-top: 7rem;
   font-size: 2rem;
@@ -298,6 +306,127 @@ header {
 
 /* <!-- About me section  --> */
 
+.about {
+  margin-top: 3rem;
+  padding-top: 7rem;
+  justify-content: space-between;
+  box-shadow: 0 4px 12px 4px rgba(0, 0, 0, 0.247);
+  background: gray;
+}
+
+.about-content .about-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+
+.about-content .about-left img {
+  width: 100%;
+  max-width: 450px;
+  height: 50vh;
+}
+
+.about h1 {
+  text-align: center;
+  padding-bottom: 4rem;
+}
+
+.about-intrest {
+  justify-content: column;
+}
+
+.about-intrest .interest {
+  font-weight: bolder;
+}
+
+.about-right > h3 {
+  line-height: 0;
+}
+
+address {
+  padding: 2rem 0;
+}
+
+.about-intrest > div span:hover {
+  cursor: pointer;
+  background: rgba(103, 111, 112, 0.35);
+  transform: scale(1.5);
+  transition: all 0.5s;
+}
+
 /* <!-- Contact me section  --> */
 
+.touch {
+  padding-top: 7rem;
+  margin-top: 4rem;
+}
+
+.social-media {
+  justify-content: space-between;
+  font-size: 4rem;
+}
+
+.email-section {
+  justify-content: center;
+}
+
+.email {
+  background: var(--color-dark);
+  justify-content: center;
+  align-items: center;
+  color: var(--body-bg);
+  padding: 2rem;
+  width: 400px;
+  border-radius: 50px;
+}
+
+.snd-email {
+  background: var(--color-orange);
+  padding: 1rem;
+  border-radius: 50%;
+}
+
 /* <!-- footer section --> */
+
+footer {
+  margin-top: 3rem;
+  padding-top: 7rem;
+  background: black;
+  color: var(--dark-text-color);
+}
+
+footer .top {
+  justify-content: center;
+  gap: 6rem;
+}
+
+footer .top ul {
+  padding-left: 0;
+  line-height: 2.5rem;
+}
+
+footer .bottom {
+  padding: 2rem 0;
+  text-align: center;
+  margin-top: auto;
+}
+
+footer div:nth-child(3) {
+  color: var(--dark-text-color);
+}
+
+/* go up */
+
+.go-up {
+  position: fixed;
+  width: 3rem;
+  height: 3rem;
+  background: var(--color-orange);
+  bottom: 50px;
+  right: 20px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
