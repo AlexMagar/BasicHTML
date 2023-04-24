@@ -188,7 +188,7 @@ header {
   border: none;
   background: var(--color-dark);
   border-radius: 2rem;
-  color: var(--body-bg);
+  color: white;
   font-size: 1.1rem;
 }
 
@@ -287,11 +287,15 @@ header {
 
 .projects .project-container {
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+  margin-top: 4rem;
 }
 
 .projects .project-container .project-card {
   flex-direction: column;
+  border: 2px solid rgba(0, 0, 0, 0.03);
   box-shadow: 0 4px 12px 4px rgba(0, 0, 0, 0.247);
+  border-radius: 5px;
 }
 
 .projects .project-container .project-card img {
@@ -312,6 +316,11 @@ header {
   justify-content: space-between;
   box-shadow: 0 4px 12px 4px rgba(0, 0, 0, 0.247);
   background: gray;
+}
+
+.about-content {
+  margin-top: 7rem;
+  gap: 3rem;
 }
 
 .about-content .about-left {
@@ -360,6 +369,8 @@ address {
 .touch {
   padding-top: 7rem;
   margin-top: 4rem;
+  text-align: center;
+  margin-bottom: 10rem;
 }
 
 .social-media {
@@ -369,13 +380,16 @@ address {
 
 .email-section {
   justify-content: center;
+  margin-top: 4rem;
 }
 
 .email {
   background: var(--color-dark);
   justify-content: center;
   align-items: center;
-  color: var(--body-bg);
+  color: var(--dark-text-color);
+  border: white;
+  box-shadow: 0 4px 12px 4px rgba(255, 255, 255, 0.247);
   padding: 2rem;
   width: 400px;
   border-radius: 50px;
