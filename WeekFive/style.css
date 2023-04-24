@@ -42,7 +42,7 @@ a {
   font-size: 2rem;
   font-weight: bolder;
   text-align: center;
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
 }
 
 /* <!-- checkbox section  --> */
@@ -87,10 +87,10 @@ a {
 /* dark more activation */
 
 #darkMode:checked + .wrapper {
-  background: var(--dark-bg);
-  --text-color: var(var(--dark-text-color));
+  --body-bg: var(--dark-bg);
+  --text-color: var(--dark-text-color);
   min-height: 100vh;
-  color: --dark-text-color;
+  color: var(--dark-text-color);
   --border-color: var(--dark-border-color);
 }
 
