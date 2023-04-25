@@ -466,3 +466,29 @@ footer div:nth-child(3) {
   align-items: center;
   font-size: 2rem;
 }
+
+/* ====== media query */
+
+/* ===== hide menu and show ham-burger menu */
+
+@media (max-width: 800px) {
+  .header .menu .navigation {
+    display: none;
+  }
+  .header .menu #check {
+    display: none;
+  }
+  #check,
+  .menu-icon {
+    display: block;
+  }
+  #check,
+  .menu-icon:hover {
+    cursor: pointer;
+    transform: scale(1.5);
+    transition: all 0.5s;
+  }
+  header .menu #check:checked ~ ul {
+    display: block;
+  }
+}
