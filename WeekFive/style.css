@@ -268,11 +268,15 @@ header {
   gap: 3rem;
 }
 
-.skills > div {
+.skills > div > i {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
+/* .skills > div > :nth-child(1) {
+  color: #e34c26;
+} */
 
 .skills i {
   font-size: 6rem;
@@ -328,12 +332,13 @@ header {
   justify-content: center;
   align-items: center;
   width: 80%;
+  margin-top: -7rem;
 }
 
 .about-content .about-left img {
   width: 100%;
   max-width: 450px;
-  height: 50vh;
+  height: 70vh;
 }
 
 .about h1 {
@@ -368,7 +373,7 @@ address {
 
 .touch {
   padding-top: 7rem;
-  margin-top: 4rem;
+  margin-top: 6rem;
   text-align: center;
   margin-bottom: 10rem;
 }
@@ -376,6 +381,23 @@ address {
 .social-media {
   justify-content: space-between;
   font-size: 4rem;
+  padding: 3rem 0;
+}
+
+.social-media > a:nth-child(1) {
+  color: #0077b5;
+}
+
+.social-media > a:nth-child(2) {
+  color: #1da1f2;
+}
+
+.social-media > a:nth-child(3) {
+  color: #3b5998;
+}
+
+.social-media > a:nth-child(4) {
+  color: #ff0000;
 }
 
 .email-section {
@@ -390,7 +412,7 @@ address {
   color: var(--dark-text-color);
   border: white;
   box-shadow: 0 4px 12px 4px rgba(255, 255, 255, 0.247);
-  padding: 2rem;
+  padding: 2rem 0;
   width: 400px;
   border-radius: 50px;
 }
