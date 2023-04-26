@@ -491,4 +491,7 @@ footer div:nth-child(3) {
   header .menu #check:checked ~ ul {
     display: block;
   }
+  header .menu #check:checked {
+    display: none;
+  }
 }
