@@ -275,6 +275,32 @@ header {
   align-items: center;
 }
 
+.skills > div:nth-child(1) i {
+  /* color: liner  #e34c26, #f06529, #ebebeb, #fff, #000; */
+  /* background: linear-gradient(to right, #e34c26, #f06529, #ebebeb, #fff, #000;); */
+  color: #e34c26;
+  /* background: linear-gradient(
+    #e34c26 20%,
+    #f06529 20%,
+    #ebebeb 20%,
+    #fff 20%,
+    #000 20%
+  );
+  -webkit-background-clip: text; */
+}
+
+.skills > div:nth-child(2) i {
+  color: #264de4;
+}
+
+.skills > div:nth-child(3) i {
+  color: rgb(217, 217, 36);
+}
+
+.skills > div:nth-child(5) i {
+  color: greenyellow;
+}
+
 /* .skills > div > :nth-child(1) {
   color: #e34c26;
 } */
@@ -337,14 +363,29 @@ header {
 }
 
 .about-content .about-left img {
-  width: 100%;
+  scale: fill;
+  /* width: 100%;
   max-width: 450px;
-  height: 70vh;
+  height: 70vh; */
 }
 
 .about h1 {
   text-align: center;
-  padding-bottom: 4rem;
+  font-size: 48px;
+  line-height: 56px;
+  line-height: 100%;
+  vertical-align: top;
+  /* line-height: 56px;
+  line-height: 100%;
+  vertical-align: top; */
+  /* padding-bottom: 4rem; */
+}
+
+.about-right > span {
+  font-style: bold;
+  font-size: 48px;
+  line-height: 56px;
+  line-height: 100%;
 }
 
 .about-intrest {
@@ -355,8 +396,10 @@ header {
   font-weight: bolder;
 }
 
-.about-right > h3 {
-  line-height: 0;
+.about-right > p {
+  font-size: 20px;
+  line-height: 23px;
+  line-height: 100%;
 }
 
 address {
@@ -381,6 +424,7 @@ address {
 
 .social-media {
   justify-content: space-between;
+  flex-wrap: wrap;
   font-size: 4rem;
   padding: 3rem 0;
 }
