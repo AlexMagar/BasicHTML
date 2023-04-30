@@ -161,6 +161,7 @@ header {
   background: var(--color-orange);
   padding: 0 2rem;
   display: grid;
+  grid-template-columns: 1fr 1fr;
   grid-template-areas: "left right";
 }
 
@@ -170,7 +171,7 @@ header {
   grid-area: left;
   flex-direction: column;
   justify-content: center;
-  padding-left: 5vw;
+  padding: 5vw 2rem;
 }
 
 .left .name {
@@ -546,5 +547,32 @@ footer div:nth-child(3) {
   }
   .banner .info-divider {
     display: none;
+  }
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "right" "left";
+  }
+  .hero-section .hero .right {
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 2rem 1rem;
+  }
+  .hero-section .hero .right img {
+    height: 70%;
+  }
+  .about .container .about-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "about-left" "about-right";
+  }
+  .about .container .about-content .about-right {
+    padding: 2rem;
+    margin: 2rem;
+  }
+  .about-content .about-left {
+    margin: auto;
+    width: 80%;
   }
 }
