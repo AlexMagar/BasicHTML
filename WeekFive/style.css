@@ -390,6 +390,10 @@ header {
   line-height: 100%;
 }
 
+.about .container .about-content .about-right > address {
+  font-style: normal;
+}
+
 .about-intrest {
   justify-content: column;
 }
@@ -519,6 +523,10 @@ footer div:nth-child(3) {
 /* ===== hide menu and show ham-burger menu 768*/
 
 @media (max-width: 800px) {
+  /* =======header */
+  /* header {
+    padding: 0 50px;
+  } */
   /* ===== navigation section */
   .header .menu .navigation {
     display: none;
@@ -536,6 +544,7 @@ footer div:nth-child(3) {
     transform: scale(1.5);
     transition: all 0.5s;
   }
+  /* ====== show nav bar in verticle bar  */
   header .menu #check:checked ~ ul {
     animation: backwards;
     display: block;
@@ -552,12 +561,19 @@ footer div:nth-child(3) {
   header .menu .navigation > li {
     line-height: 5rem;
   }
-  header .menu #check:checked {
-    display: none;
+  header .menu > ul > li:checked ~ ul {
+    font-size: 3rem;
   }
   /* ====== banner section */
+  .banner {
+    /* margin: auto; */
+  }
   .banner .info-content {
-    margin: auto;
+    /* margin: auto; */
+    padding-left: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .banner .info-divider {
     display: none;
