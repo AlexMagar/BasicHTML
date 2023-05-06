@@ -104,3 +104,45 @@ try {
 } finally {
   console.log("I in side the finally");
 }
+
+// ==== js-scheduling ======
+function hello() {
+  console.log("Hello World!!!");
+}
+
+//this function is executed after 5000ms or any given time
+setTimeout(hello, 5000);
+
+// interval will run every 1 second,
+let i = 0;
+const interval = setInterval(() => {
+  console.log("Inside the interval", i++);
+  if (i == 5) {
+    clearInterval(interval); //it clear interval if i equal to 10
+  }
+}, 1000);
+
+// ===== arrow function ======
+const addTwoNumbers = (num1, num2) => console.log(num1 + num2);
+addTwoNumbers(4, 6);
+
+// ==== return in arrow function
+let addTwoNumber = (num1, num2) => num1 + num2;
+console.log(addTwoNumber(4, 5));
+
+// ======= loops =======
+// ***** for loop *****
+for (let i = 10; i >= 0; i--) {
+  console.log(i);
+}
+
+// ****** while loop
+let num = 1;
+console.log("In the while loop");
+while (num < 10) {
+  console.log(num);
+  num++;
+}
+
+// ======= data manuplation ========
+// safe number -2^53-1 to 2^53-1
