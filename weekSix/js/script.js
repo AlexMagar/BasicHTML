@@ -111,8 +111,9 @@ function hello() {
 }
 
 //this function is executed after 5000ms or any given time
-setTimeout(hello, 5000);
+// setTimeout(hello, 5000);
 
+/*
 // interval will run every 1 second,
 let i = 0;
 const interval = setInterval(() => {
@@ -121,6 +122,7 @@ const interval = setInterval(() => {
     clearInterval(interval); //it clear interval if i equal to 10
   }
 }, 1000);
+*/
 
 // ===== arrow function ======
 const addTwoNumbers = (num1, num2) => console.log(num1 + num2);
@@ -132,17 +134,78 @@ console.log(addTwoNumber(4, 5));
 
 // ======= loops =======
 // ***** for loop *****
+/*
 for (let i = 10; i >= 0; i--) {
   console.log(i);
 }
-
+*/
 // ****** while loop
+/*
 let num = 1;
 console.log("In the while loop");
 while (num < 10) {
   console.log(num);
   num++;
 }
+*/
 
 // ======= data manuplation ========
 // safe number -2^53-1 to 2^53-1
+
+// ****** string ******
+// Escape character
+// Length
+// indexOf, lastIndexOf, search
+// Slice, substring, substr
+// Replace, contact, trim
+// toUpperCase, toLowerCase
+// charAt, [], split
+const str = 'Hi, "i\'m the" Owner of this Mac';
+console.log(str);
+console.log(str.length);
+console.log(str.toUpperCase());
+console.log(str.toLowerCase());
+console.log(str[31]);
+console.log(str.indexOf("o"));
+// for (let i = 0; i <= str.length; i++) {
+//   console.log(
+//     str[i],
+//     " index is ",
+//     i,
+//     " ",
+//     i,
+//     " index has character ",
+//     str.charAt(i)
+//   );
+// }
+// console.log(str.replace("i", "you"));
+// console.log(str.replaceAll("i", "you"));
+// console.log(str.substring(4, 6));
+// console.log(str.substr());
+// console.log(str.slice(3, 6));
+// console.log(str.slice(-5));
+
+// const val = str.includes("Owner");
+
+// const val = str.charAt(1);
+// const val = str.split("Owner");
+
+// const val = str.search("Owner");
+// console.log(" ham", val);
+
+// template literals
+const bio = (name, address) => {
+  return `Today, we will learn about ${name} well his name is Sam and  he lives in ${address} nad Sydney is his fac place`;
+};
+
+const val = bio("Ram", "Brisbane");
+console.log(val);
+
+// ======= Array[]  ========
+// Length, push, pop, shift, unshift, toString, join, [], splice, slice, indexOf;
+// Short, reverse;
+// forEach, map;
+// Filter, reduce, every;
+
+const fruits = ["name", 123];
+console.log(fruits[0]);
