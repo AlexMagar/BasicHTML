@@ -92,4 +92,4 @@ arg.forEach((num, i) => {
 
 const newArg = [...new Set(arg)];
 
-console.log("Remove duplicate number from the array ", newArg);
+console.log("Remove duplicate number from the array: ", newArg);
