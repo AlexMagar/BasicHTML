@@ -205,7 +205,127 @@ console.log(val);
 // Length, push, pop, shift, unshift, toString, join, [], splice, slice, indexOf;
 // Short, reverse;
 // forEach, map;
-// Filter, reduce, every;
+// Filter, reduce, find, every;
 
-const fruits = ["name", 123];
-console.log(fruits[0]);
+const fruits = ["Orange", "Banana", "Graps", "Kiwi", "Passon Fruit"];
+fruits.push("Apples"); // add at the last
+fruits.unshift("Mango"); // add at the start
+
+fruits.pop(); // pop from last
+fruits.shift(); // remove from the first
+
+// const data = fruits.slice(1, 4);
+// const data = fruits.splice(1, 2, "papaya"); // muate the original array
+
+//forEach do not return anything
+fruits.forEach((item, index) => {
+  console.log(index, item);
+});
+
+// map also return array which forEach cannot
+// const newArg = fruits.map((item, index) => {
+//     return index, item;
+// });
+
+//filter returns true, it will push item to varibale, return false ignores the push
+// const newArg = fruits.filter((itms) => {
+//   return itms.includes("P");
+// });
+
+// const newArg = fruits.find((itms) => itms.includes("P"));
+
+// const newArg = fruits.includes((itms) => itms.includes("P"));
+
+//truthy values "ram", 123, true, [], {}, ()=>{}
+//falsy value "", 0, NaN, false, undefine,null
+
+const banks = [12, 32345, 34254, 23, 23456, 32454, 45];
+const totalMoney = banks.reduce((subtld, item) => {
+  return subtld + item;
+}, 0);
+// console.log(data);
+console.log(totalMoney);
+// console.log(fruits);
+
+// ========= Object ======
+const person = {
+  name: "Ram",
+  age: 22,
+  address: "Sydney",
+  gender: "male",
+  father: "Rocky",
+  mother: "sita",
+};
+
+const biography = (obj) => {
+  console.log(obj);
+  return `
+  The person called ${obj.name} age ${obj.age} lives in ${obj.address}
+  `;
+};
+
+const str01 = bio(biography);
+console.log(str01);
+// const p1 = Object.assign({}, person);
+// const p2 = { ...person }; // spread
+// const { name, ...rest } = person; // destructuring
+// person.address = "Sydney";
+// delete person.age;
+// console.log(name, rest);
+// console.log(person, p1, p2);
+
+// Destructuring
+// // default +
+// Rest (... before the = it is rest)
+// Spread (... after the = is spread)
+// -> it combine the 2 object
+// const obj1 = {
+//   fname: "Ram",
+//   address: "Sydney",
+// };
+
+// const obj2 = {
+//   position: "CEO",
+//   company: "Org",
+// };
+
+// const combo = { ...obj1, ...obj2 };
+// console.log(combo);
+
+// Date()
+// Formate
+// Get Methods
+// Set Methods
+
+// const date = Date();
+// const date = Date.now(); //gives milli seconds
+// const date = new Date("2023-02-20");
+// date.setDate(date.getDate() + 5);
+// const val01 = date.getDay();
+// console.log(val01);
+
+// challenge a function that takes food name and expire date and return like
+// ---- if expired: xyz is expired
+// ---- else xyz is not expired, you have 10 days to use this produce
+// task: 1.create an object of a project with name and expire Date
+// 2. write function to do the challange 1 solution and return the string
+
+console.log("1. log");
+
+setTimeout(() => {
+  console.log("2. inside first set timeout");
+}, 700);
+
+console.log("3. after setTime out");
+
+const sayHey = () => {
+  console.log("4. inside sayHey");
+};
+
+setTimeout(() => {
+  console.log("5. inside first set timeout");
+}, 500);
+
+sayHey();
+
+console.log("6. last clg");
