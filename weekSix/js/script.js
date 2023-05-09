@@ -195,11 +195,12 @@ console.log(str.indexOf("o"));
 
 // template literals
 const bio = (name, address) => {
-  return `Today, we will learn about ${name} well his name is Sam and  he lives in ${address} nad Sydney is his fac place`;
+  return `Today, we will learn about ${name}.
+   well his name is ${name} and  he lives in ${address} and ${address} is his fav place`;
 };
 
-const val = bio("Ram", "Brisbane");
-console.log(val);
+const sam = bio("Ram", "Brisbane");
+console.log(sam);
 
 // ======= Array[]  ========
 // Length, push, pop, shift, unshift, toString, join, [], splice, slice, indexOf;
@@ -244,7 +245,7 @@ const totalMoney = banks.reduce((subtld, item) => {
   return subtld + item;
 }, 0);
 // console.log(data);
-console.log(totalMoney);
+console.log("total sum of an array is ", totalMoney);
 // console.log(fruits);
 
 // ========= Object ======
@@ -257,15 +258,20 @@ const person = {
   mother: "sita",
 };
 
-const biography = (obj) => {
-  console.log(obj);
-  return `
-  The person called ${obj.name} age ${obj.age} lives in ${obj.address}
-  `;
-};
+/*
+Copy the values of all of the enumerable own properties from one or more source objects to a target object. Returns the target object.
 
-const str01 = bio(biography);
-console.log(str01);
+@param target — The target object to copy to.
+
+@param source — The source object from which to copy properties.
+*/
+// const p2 = Object.assign({}, person);s
+
+const bio1 = (obj) => {
+  console.log("where i am", obj);
+  return `The person called ${obj.name} age ${obj.age} lives in ${ovj.address}`;
+};
+console.log(bio1);
 // const p1 = Object.assign({}, person);
 // const p2 = { ...person }; // spread
 // const { name, ...rest } = person; // destructuring
@@ -309,7 +315,44 @@ console.log(str01);
 // ---- else xyz is not expired, you have 10 days to use this produce
 // task: 1.create an object of a project with name and expire Date
 // 2. write function to do the challange 1 solution and return the string
+const foods = [
+  {
+    name: "Tuna",
+    expire: "2023-05-05",
+  },
+  {
+    name: "Milk",
+    expire: "2023-05-15",
+  },
+];
 
+const millADay = 1 * 24 * 60 * 60 * 1000;
+const today = Date.now(); //time stamp
+
+// console.log(today);
+const checkExpire = ({ name, expire }) => {
+  const expTs = new Date(expire).getTime();
+  // console.log(expTs);
+  if (today > expTs) {
+    const diffDay = today - expTs;
+    console.log(
+      `${name} had expired by ${Math.floor(diffDay / millADay)} days`
+    );
+  } else {
+    const diffDay = expTs - today;
+    console.log(
+      `${name} had not expired yet and you have ${Math.floor(
+        diffDay / millADay
+      )} days`
+    );
+  }
+};
+
+foods.forEach((item) => {
+  checkExpire(item);
+});
+
+// ====== checking the JS run time =====
 console.log("1. log");
 
 setTimeout(() => {
