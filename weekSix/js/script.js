@@ -267,11 +267,11 @@ Copy the values of all of the enumerable own properties from one or more source 
 */
 // const p2 = Object.assign({}, person);s
 
-const bio1 = (obj) => {
-  console.log("where i am", obj);
-  return `The person called ${obj.name} age ${obj.age} lives in ${ovj.address}`;
-};
-console.log(bio1);
+// const bio1 = (obj) => {
+//   console.log("where i am", obj);
+//   return `The person called ${obj.name} age ${obj.age} lives in ${ovj.address}`;
+// };
+// console.log(bio1);
 // const p1 = Object.assign({}, person);
 // const p2 = { ...person }; // spread
 // const { name, ...rest } = person; // destructuring
