@@ -8,9 +8,9 @@ document.write("Hello there how are you");
 // window.alert("Hello JS!!!");
 
 function getIndex() {
-    let txt = document.getElementById("heading").innerHTML;
-    let index = txt.indexOf("world");
-    document.getElementById("demo1").innerHTML = "The index of " + index;
+  let txt = document.getElementById("heading").innerHTML;
+  let index = txt.indexOf("world");
+  document.getElementById("demo1").innerHTML = "The index of " + index;
 }
 
 // filter, reduce, includes
