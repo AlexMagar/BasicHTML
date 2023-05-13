@@ -1,3 +1,5 @@
+// ====== OOP =======
+
 // literal
 const a = {
   //properties
@@ -54,3 +56,8 @@ class veg {
 }
 const obj1 = new veg("Apple", 23);
 console.log(obj1.bio());
+
+//Encapsulation
+// Abstraction
+// Inheritance
+// Polymorphism
