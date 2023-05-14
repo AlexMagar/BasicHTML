@@ -17,7 +17,7 @@ body {
 
 .grid {
   display: grid;
-  gap: 1rem;
+  gap: 0.4rem;
 }
 
 /* ===== coloring ===== */
@@ -44,9 +44,12 @@ body {
 .cal {
   border: solid 2px;
   position: relative;
-  top: 4rem;
+  top: 2rem;
   left: auto;
-  width: 70vw;
+  width: 400px;
+  padding: 1.2rem;
+  margin: 1rem;
+  /* width: 50vw; */
   background: var(--body-bg);
   border-radius: 1rem;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -57,14 +60,25 @@ body {
   background: var(--color-blue);
   text-align: center;
   color: var(--color-text);
-  margin: 1rem;
+  /* margin: 1rem; */
   padding: 1rem;
 }
 
-.result {
+.cal .result {
+  text-align: right;
   grid-area: result;
+}
+
+.ac {
+  color: rgb(255, 255, 0) !important;
 }
 
 .zero {
   grid-area: zero;
+}
+
+.cal :not(:first-child):hover {
+  cursor: pointer;
+  background: black;
+  transform: 1.2s;
 }
