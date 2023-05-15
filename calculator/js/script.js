@@ -25,6 +25,9 @@
 //   console.log("result not publish", rslt);
 // }
 
+// importing the audio File
+const audioFile = new Audio("./assets/aa.wav");
+
 // 1. grab all the buttons first
 const btnValue = document.querySelectorAll("div>.btn");
 
@@ -34,7 +37,9 @@ console.log("result ", displayEle.innerText);
 
 let stringToDisplay = "";
 
-const operatorsVar = ["%", "/", "*", "-", "+", "="];
+let latestOperator = "";
+
+const operatorsVar = ["%", "/", "*", "-", "+"];
 
 // 3. loop through all the buttons
 btnValue.forEach((num, i) => {
@@ -44,6 +49,11 @@ btnValue.forEach((num, i) => {
   num.addEventListener("click", () => {
     let clickBtnValue = num.innerText;
     // console.log("Ola!!! inside the event listiner ", clickBtnValue);
+
+    //limit the user from typing operators in the beginning
+    if (operatorsVar.includes(clickBtnValue) && !stringToDisplay.length) {
+      return;
+    }
 
     // 6. eg. if user pressed the AC button, clear the content of the display
     if (clickBtnValue === "AC") {
@@ -60,7 +70,22 @@ btnValue.forEach((num, i) => {
 
     // 8. Tricky: to control the point and equals to operator
     if (operatorsVar.includes(clickBtnValue)) {
-      console.log("inside the  operators value");
+      // const lastCharacter = stringToDisplay.slice(0, -1);
+      const lastCharacter = stringToDisplay.slice(-1);
+      console.log("lastcharacter ", lastCharacter);
+
+      if (operatorsVar.includes(lastCharacter)) {
+        stringToDisplay = stringToDisplay.slice(0, -1);
+      }
+    }
+
+    if (clickBtnValue === "=") {
+      const lastCharacter = stringToDisplay.slice(-1);
+
+      if (operatorsVar.includes(lastCharacter)) {
+        stringToDisplay = stringToDisplay.slice(0, -1);
+      }
+      return displayTotal(stringToDisplay);
     }
     // 5. get the content of the button and check what button is being pressed
     stringToDisplay += clickBtnValue;
@@ -75,6 +100,32 @@ const displayResult = (value) => {
   displayEle.innerText = value || "0.00";
 };
 
+const displayTotal = (value) => {
+  const prankedData = sendRandom();
+  if (prankedData) {
+    audioFile.play();
+    displayEle.style.background = "red";
+    setTimeout(() => (displayEle.style.background = ""), 2000);
+  }
+  console.log(prankedData);
+
+  let totalValue = eval(value).toString();
+  stringToDisplay = totalValue;
+  displayResult(stringToDisplay);
+};
+
+const sendRandom = () => {
+  let ranNum = Math.round(Math.random() * 10);
+  console.log(ranNum);
+
+  // if (ranNum < 3) {
+  //   return ranNum;
+  // } else {
+  //   return 0;
+  // }
+  // tertiary operators
+  return ranNum < 3 ? ranNum : 0;
+};
 // myArr.addEventListener("click", () => {
 //   //   console.log(ele.innerText);
 //   myArr.innerHTML = "Now the text is changed";
