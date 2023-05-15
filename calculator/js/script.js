@@ -39,7 +39,7 @@ let stringToDisplay = "";
 
 let latestOperator = "";
 
-const operatorsVar = ["%", "/", "*", "-", "+"];
+const operatorsVar = ["%", "/", "*", "-", "+", "."];
 
 // 3. loop through all the buttons
 btnValue.forEach((num, i) => {
@@ -91,6 +91,17 @@ btnValue.forEach((num, i) => {
     stringToDisplay += clickBtnValue;
     console.log("string to Display: ", stringToDisplay);
     displayResult(stringToDisplay);
+
+    // check for decimal in the number
+    if (clickBtnValue === ".") {
+      console.log("you are inside the decimal ");
+      if (stringToDisplay.includes(".")) {
+        console.log("double decimal id not vaild in a number");
+        displayEle.style.background = "red";
+        setTimeout(() => (displayEle.style.background = ""), 200);
+        return;
+      }
+    }
   });
 });
 // console.log(btnValue);
@@ -126,6 +137,7 @@ const sendRandom = () => {
   // tertiary operators
   return ranNum < 3 ? ranNum : 0;
 };
+
 // myArr.addEventListener("click", () => {
 //   //   console.log(ele.innerText);
 //   myArr.innerHTML = "Now the text is changed";
@@ -134,3 +146,20 @@ const sendRandom = () => {
 //     console.log(num.innerText);
 //   });
 // });
+
+// HOMEWORK
+/*
+if (val === ".")
+1. finds the last occurance of the last operator, 
+This is done to handle cases where the decimal point is entered after an operator. 
+             For example, if the expression is "5+4*", 
+            the decimal point should be allowed after the "*", not after the "+".
+2. SLICE THAT OUT 
+3. check if lastNumberSet already includes a decimal point. 
+If it does, it means that a decimal point has already been entered for the current number
+use : lastNumberSet.includes(".") and return nothing
+4. If there is no lastOperator (which means the expression doesn't have an operator yet) and 
+   strToDisplay already includes a decimal point, it means that the decimal point has already 
+   been entered for the first number in the expression.
+5.  check if (!lastOperator && strToDisplay.includes(".")) then return 
+*/
