@@ -24,12 +24,13 @@
 let taskList = [];
 const entryElm = document.getElementById("entry");
 const badElm = document.getElementById("bad");
+const hrsPerWeek = 24 * 7;
 // ============= form handler ==========
 // capture the data from the form on from submit
 const handleOnSubmit = (e) => {
   const formDt = new FormData(e);
   const task = formDt.get("task");
-  const hr = formDt.get("hr");
+  const hr = +formDt.get("hr");
   const taskObj = {
     task,
     hr,
@@ -37,6 +38,11 @@ const handleOnSubmit = (e) => {
     type: "entry",
   };
 
+  // check if the new task can fit in the available hours per week
+  const ttl = totalHours();
+  if (ttl + hr > hrsPerWeek) {
+    return alert("sorry can't do more than 168 hrs");
+  }
   //store that data in array as obj
   taskList.push(taskObj);
   displayTask();
@@ -46,7 +52,7 @@ const handleOnSubmit = (e) => {
 const displayTask = () => {
   const entryList = taskList.filter((item) => item.type === "entry");
   let str = "";
-  taskList.map((item, i) => {
+  entryList.map((item, i) => {
     str += ` <tr>
     <td>${item.task}</td>
     <td>${item.hr}hrs</td>
@@ -60,13 +66,15 @@ const displayTask = () => {
 
   entryElm.innerHTML = str;
   displayBadTask();
+
+  totalHours();
 };
 
 //displaying baddata in the browser
 const displayBadTask = () => {
-  const entryList = taskList.filter((item) => item.type === "bad");
+  const badList = taskList.filter((item) => item.type === "bad");
   let str = "";
-  taskList.map((item, i) => {
+  badList.map((item, i) => {
     str += ` <tr>
     <td>${item.task}</td>
     <td>${item.hr}hrs</td>
@@ -79,6 +87,10 @@ const displayBadTask = () => {
   });
 
   badElm.innerHTML = str;
+  const badHrs = badList.reduce((acc, item) => acc + +item.hr, 0);
+  document.getElementById("badHrs").innerHTML = badHrs;
+
+  totalHours();
 };
 
 //creating unique id
@@ -112,6 +124,9 @@ const switchTask = (id, type) => {
 };
 
 //calculate haours
-const countHours = (hr) => {
-  console.log(taskObj.hr);
+const totalHours = () => {
+  const ttlHrs = taskList.reduce((acc, { hr }) => acc + +hr, 0);
+  document.getElementById("total").innerText = ttlHrs;
+
+  return ttlHrs;
 };
