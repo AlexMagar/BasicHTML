@@ -23,24 +23,24 @@
 
 let taskList = [];
 const entryElm = document.getElementById("entry");
-const entryBad = document.getElementById("bad");
+const badElm = document.getElementById("bad");
 // ============= form handler ==========
 // capture the data from the form on from submit
 const handleOnSubmit = (e) => {
   const formDt = new FormData(e);
   const task = formDt.get("task");
   const hr = formDt.get("hr");
-
   const taskObj = {
     task,
     hr,
     id: randomGenerator(),
     type: "entry",
   };
+
+  //store that data in array as obj
   taskList.push(taskObj);
   displayTask();
 };
-// store that data in array as obj
 
 //displaying data in the browser
 const displayTask = () => {
@@ -59,23 +59,28 @@ const displayTask = () => {
   });
 
   entryElm.innerHTML = str;
+  displayBadTask();
 };
 
-const badList = () => {
-  const entryList = taskList.filter((item) => item.type === "entry");
+//displaying baddata in the browser
+const displayBadTask = () => {
+  const entryList = taskList.filter((item) => item.type === "bad");
   let str = "";
   taskList.map((item, i) => {
     str += ` <tr>
-          <td>${item.task}</td>
-          <td>${item.hr}hrs</td>
-          <td>
-              <button id="danger" class="btn btn-danger btn-sm" onClick="deleteTask('${item.id}')"><i class="fa-solid fa-trash"></i></button>
-              <button id="go-left" class="btn btn-success btn-sm" onClick="switchTask('${item.id}','bad')"><i class="fa-solid fa-arrow-right"></i></button>
-          </td>
-      </tr>
-      `;
+    <td>${item.task}</td>
+    <td>${item.hr}hrs</td>
+    <td>
+        <button class="btn btn-warning btn-sm" onclick="switchTask('${item.id}','entry')"><i class="fa-solid fa-arrow-left"></i></button>
+        <button class="btn btn-danger btn-sm" onclick="deleteTask('${item.id}')"><i class="fa-solid fa-trash"></i></button>
+    </td>
+</tr>
+`;
   });
+
+  badElm.innerHTML = str;
 };
+
 //creating unique id
 const randomGenerator = (length = 6) => {
   const collection = "qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNM";
@@ -104,4 +109,9 @@ const switchTask = (id, type) => {
     return item;
   });
   displayTask();
+};
+
+//calculate haours
+const countHours = (hr) => {
+  console.log(taskObj.hr);
 };
