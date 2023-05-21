@@ -4,7 +4,9 @@
 // 3. display user in the UI
 
 let userList = [];
+
 const apiEp = "https://randomuser.me/api/?";
+const countElm = document.getElementById("count");
 const displayElm = document.getElementById("list");
 
 // function to fetch user from API
@@ -31,7 +33,7 @@ const fetchUsers = async (path = "results=10") => {
     userList = data.results; //json into data and store in list
     console.log(data.results);
 
-    displaUser(); //call the function
+    displaUser(userList); //call the function
   } catch (error) {
     console.log(error);
   }
@@ -39,9 +41,9 @@ const fetchUsers = async (path = "results=10") => {
 
 fetchUsers();
 
-const displaUser = () => {
+const displaUser = (displayArg) => {
   let str = "";
-  userList.forEach((usr) => {
+  displayArg.forEach((usr) => {
     str += `  
     <div class="card" style="width: 18rem;">
     <img src="${usr?.picture?.large}" class="card-img-top" alt="...">
@@ -55,10 +57,25 @@ const displaUser = () => {
   </div>`;
   });
   displayElm.innerHTML = str;
+  countElm.innerText = displayArg.length;
 };
 
 document.getElementById("select").addEventListener("change", (e) => {
   const { value } = e.target;
   const path = `results=10&gender=` + value;
   fetchUsers(path);
+});
+
+document.getElementById("search-input").addEventListener("keyup", (e) => {
+  const { value } = e.target;
+  console.log(value);
+
+  //run filter method
+  const filteredUser = userList.filter((item) => {
+    console.log(item);
+    const fullName = (item.name.first + " " + item.name.last).toLowerCase();
+
+    return fullName.includes(value.toLowerCase());
+  });
+  displaUser(filteredUser);
 });
