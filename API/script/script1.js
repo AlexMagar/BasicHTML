@@ -25,25 +25,19 @@ fetchUsers();
 // ISS location and people in space
 const displaUser = (displayArg) => {
   let str = "";
+  var cnt = 1;
   console.log("what is in display Args: ", displayArg, " ", str);
   displayArg.forEach((usr) => {
     str += `
-    <table class="table table-dark table-striped">
-    <thead>
     <tr>
-    <th>Name</th>
-    <th>Aircraft</th>
+    <th>${cnt}</th>
+    <td>${usr?.name}</td>
+    <td>${usr?.craft}</td>
     </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <th>${usr?.name}</th>
-    <th>${usr?.craft}</th>
-    </tr>
-    </tbody>
-    </table>
        `;
+    cnt++;
   });
+
   displayElm.innerHTML = str;
   console.log("String", str);
 };
