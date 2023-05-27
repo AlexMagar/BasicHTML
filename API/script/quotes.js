@@ -1,7 +1,9 @@
 let quotesList = [];
 const dataElm = "https://type.fit/api/quotes/";
 const displayDat = document.getElementById("quotes");
-console.log(fetch(dataElm));
+const countElm = document.getElementById("count");
+const getAuthor = document.getElementById("floatingSelect")
+console.log(getAuthor);
 
 const fetchData = async () => {
   //   fetch(data)
@@ -31,15 +33,25 @@ fetchData();
 const displayData = (displayArg) => {
   let count = 1;
   let str = "";
+  let showAuthor = "";
+  console.log("authors names ", ath)
   displayArg.forEach((element) => {
     str += `
     <tr>
-      <th>${count}</th>
-      <th>${element?.text}</th>
-      <th>${element?.author}</th>
+      <td>${count}</td>
+      <td>${element?.text}</td>
+      <td>${element?.author}</td>
     </tr>
     `;
     count++;
   });
+
+  displayArg.forEach((ele) =>{
+    showAuthor +=`
+    <option value=${count}>${ele?.author}</option>
+    `;
+  });
   displayDat.innerHTML = str;
+  getAuthor.innerHTML = showAuthor;
+  countElm.innerText = displayArg.length;
 };
