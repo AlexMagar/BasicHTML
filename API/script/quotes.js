@@ -12,14 +12,16 @@ const fetchData = async () => {
   //       console.log(data[0].text);
   //     });
   try {
-    const randNum = Math.ceil(Math.random() * 10000);
-    console.log(randNum);
     const response = await fetch(dataElm);
     console.log("Fetched Data: ", response);
     const data = await response.json();
-    quotesList = data;
-    console.log("Parse json: ", quotesList);
-    displayData(quotesList);
+    // quotesList = data;
+    // use map() after this to dispaly data 
+    console.log("Parse json: ",data);
+    
+    
+    // displayDat.innerText = (quotesList.map( item => item)[0])[0].text
+    displayData(data);
   } catch (error) {
     console.log("Someting went wrong: ", error);
   }
@@ -27,12 +29,17 @@ const fetchData = async () => {
 fetchData();
 
 const displayData = (displayArg) => {
+  let count = 1;
   let str = "";
   displayArg.forEach((element) => {
     str += `
-    <p>${element?.author}</p>
-    <p>${element?.text}</p>
-`;
+    <tr>
+      <th>${count}</th>
+      <th>${element?.text}</th>
+      <th>${element?.author}</th>
+    </tr>
+    `;
+    count++;
   });
   displayDat.innerHTML = str;
 };
