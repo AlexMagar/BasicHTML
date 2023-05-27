@@ -20,10 +20,44 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <link rel="stylesheet" href="./css/style.css">
     <title>Quotes</title>
   </head>
-  <div class="container-fluid">
-    <div class="quotes"></div>
+
+  <div class="container">
+    <!-- Title -->
+    <div class="row">
+      <div class="col">
+        <h1 class="text-center mt-5">Famous Quotes and respected authores</h1>
+      </div>
+    </div>
+
+    <hr/>
+    <!-- Search field -->
+    <div class="row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="search Quotes"/>
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="search by Auothor">
+      </div>
+    </div>
+    <hr/> 
+    <div class="row">
+      <div class="col">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Quotes</th>
+              <th scope="col">Author</th>
+            </tr>
+          </thead>
+          <tbody id="quotes"></tbody>
+        </table>
+      </div>
+    </div>
   </div>
 
   <body>
