@@ -35,22 +35,30 @@ const displayData = (displayArg) => {
   let count = 1;
   let str = "";
   let showAuthor = "";
-  let cardQuotes = "";
-
-  // displaying the quotes in card view
-  // setInterval(() =>{ 
-  //   displayArg.forEach((ele) =>{
-  //     console.log("Hello i am inside setInterval");
-  //     cardQuotes = `
-  //     <p>${ele?.text}</p>
-  //     <p class="text-end fst-italic">-${ele?.author}</p>
-  //     `;
-  //   })
-  //   // console.log("hello");
-  // });
-
+  let cardQuotes = `
+  <div class="carousel-item active">
+    <div class="col-md-4">
+      <div class="card card-body text-center">
+          <p>"Genius is one percent inspiration and ninety-nine percent perspiration."</p>
+          <p class="text-end">-Thomas Edison</p>
+      </div>
+    </div>
+  </div>
+  `;
   
-  
+  // for Carousel view
+  displayArg.forEach((ele => {
+    cardQuotes +=`
+    <div class="carousel-item active">
+      <div class="col-md-4">
+        <div class="card card-body text-center">
+            <p>"${ele?.text}"</p>
+            <p class="text-end">-${ele?.author}</p>
+        </div>
+      </div>
+    </div>
+    `;
+  }));
   console.log("why is it not: ", cardQuotes);
 
   displayArg.forEach((element) => {
@@ -69,6 +77,7 @@ const displayData = (displayArg) => {
     <option value=${ele?.author}>${ele?.author}</option>
     `;
   });
+
   displayDat.innerHTML = str;
   getQuotesCardView.innerHTML = cardQuotes;
   getAuthor.innerHTML = showAuthor;
